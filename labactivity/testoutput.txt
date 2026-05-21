@@ -1,0 +1,500 @@
+as-mac-1285@AS-MAC-1285 frontend % npm run test
+
+> product-search-frontend@0.1.0 test
+> vitest run --config vitest.config.ts
+
+
+ RUN  v2.1.9 /Users/as-mac-1285/Desktop/genai/labactivity/frontend
+
+(node:25150) ExperimentalWarning: localStorage is not available because --localstorage-file was not provided.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ❯ src/components/ProductSearch/ProductSearch.test.tsx (10)
+   ❯ ProductSearch (10)
+     ✓ renders search form with all filter inputs
+     ✓ shows empty state message initially
+     ✓ calls API and displays results on search
+     × shows loading state while searching
+     ✓ shows result count after successful search
+     × displays product name, category, price, stock status
+     ✓ reset button clears all inputs and results
+     ✓ shows client-side error when min price > max price
+     ✓ shows error message on API failure
+     ✓ shows empty state when search returns no results
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/components/ProductSearch/ProductSearch.test.tsx > ProductSearch > shows loading state while searching
+TestingLibraryElementError: Unable to find an element by: [data-testid="loading-indicator"]
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <main
+      class="_shell_ce4652"
+    >
+      <header
+        class="_header_ce4652"
+      >
+        <h1>
+          Product Search
+        </h1>
+      </header>
+      <form
+        class="_form_ce4652"
+      >
+        <div
+          class="_fieldGroup_ce4652"
+        >
+          <label
+            for="search-query"
+          >
+            Search products
+          </label>
+          <input
+            data-testid="search-input"
+            id="search-query"
+            placeholder="Laptop, book, hoodie..."
+            type="search"
+            value=""
+          />
+        </div>
+        <div
+          class="_fieldGroup_ce4652"
+        >
+          <label
+            for="category"
+          >
+            Category
+          </label>
+          <select
+            data-testid="category-select"
+            id="category"
+          >
+            <option
+              value=""
+            >
+              All categories
+            </option>
+            <option
+              value="electronics"
+            >
+              electronics
+            </option>
+            <option
+              value="clothing"
+            >
+              clothing
+            </option>
+            <option
+              value="books"
+            >
+              books
+            </option>
+            <option
+              value="home"
+            >
+              home
+            </option>
+          </select>
+        </div>
+        <div
+          class="_fieldGroup_ce4652"
+        >
+          <label
+            for="min-price"
+          >
+            Min price
+          </label>
+          <input
+            data-testid="min-price-input"
+            id="min-price"
+            min="0"
+            step="0.01"
+            type="number"
+            value=""
+          />
+        </div>
+        <div
+          class="_fieldGroup_ce4652"
+        >
+          <label
+            for="max-price"
+          >
+            Max price
+          </label>
+          <input
+            data-testid="max-price-input"
+            id="max-price"
+            min="0"
+            step="0.01"
+            type="number"
+            value=""
+          />
+        </div>
+        <div
+          class="_actions_ce4652"
+        >
+          <button
+            class="_searchButton_ce4652"
+            data-testid="search-button"
+            type="submit"
+          >
+            Search
+          </button>
+          <button
+            class="_resetButton_ce4652"
+            data-testid="reset-button"
+            type="button"
+          >
+            Clear
+          </button>
+        </div>
+      </form>
+      <p
+        class="_resultsCount_ce4652"
+      >
+        Showing 
+        2
+         of 
+        2
+         products
+      </p>
+      <section
+        aria-label="Search results"
+        class="_resultsGrid_ce4652"
+        data-testid="results-list"
+      >
+        <article
+          class="_productCard_ce4652"
+          data-testid="result-item"
+        >
+          <div
+            class="_cardHeader_ce4652"
+          >
+            <h2>
+              Test Laptop
+            </h2>
+            <span
+              class="_inStockBadge_ce4652"
+            >
+              In stock
+            </span>
+          </div>
+          <p
+            class="_category_ce4652"
+          >
+            electronics
+          </p>
+          <p
+            class="_price_ce4652"
+          >
+            $
+            299.99
+          </p>
+          <p
+            class="_description_ce4652"
+          >
+            A test laptop
+          </p>
+        </article>
+        <article
+          class="_productCard_ce4652"
+          data-testid="result-item"
+        >
+          <div
+            class="_cardHeader_ce4652"
+          >
+            <h2>
+              Test Book
+            </h2>
+            <span
+              class="_outOfStockBadge_ce4652"
+            >
+              Out of stock
+            </span>
+          </div>
+          <p
+            class="_category_ce4652"
+          >
+            books
+          </p>
+          <p
+            class="_price_ce4652"
+          >
+            $
+            14.99
+          </p>
+          <p
+            class="_description_ce4652"
+          >
+            A test book
+          </p>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/components/ProductSearch/ProductSearch.test.tsx:47:19
+     45|     await user.click(screen.getByTestId('search-button'))
+     46| 
+     47|     expect(screen.getByTestId('loading-indicator')).toHaveTex…
+       |                   ^
+     48|     await waitFor(() => {
+     49|       expect(screen.queryByTestId('loading-indicator')).not.t…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/components/ProductSearch/ProductSearch.test.tsx > ProductSearch > displays product name, category, price, stock status
+TestingLibraryElementError: Found multiple elements with the text: electronics
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+<option
+  value="electronics"
+>
+  electronics
+</option>
+
+Ignored nodes: comments, script, style
+<p
+  class="_category_ce4652"
+>
+  electronics
+</p>
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <main
+      class="_shell_ce4652"
+    >
+      <header
+        class="_header_ce4652"
+      >
+        <h1>
+          Product Search
+        </h1>
+      </header>
+      <form
+        class="_form_ce4652"
+      >
+        <div
+          class="_fieldGroup_ce4652"
+        >
+          <label
+            for="search-query"
+          >
+            Search products
+          </label>
+          <input
+            data-testid="search-input"
+            id="search-query"
+            placeholder="Laptop, book, hoodie..."
+            type="search"
+            value=""
+          />
+        </div>
+        <div
+          class="_fieldGroup_ce4652"
+        >
+          <label
+            for="category"
+          >
+            Category
+          </label>
+          <select
+            data-testid="category-select"
+            id="category"
+          >
+            <option
+              value=""
+            >
+              All categories
+            </option>
+            <option
+              value="electronics"
+            >
+              electronics
+            </option>
+            <option
+              value="clothing"
+            >
+              clothing
+            </option>
+            <option
+              value="books"
+            >
+              books
+            </option>
+            <option
+              value="home"
+            >
+              home
+            </option>
+          </select>
+        </div>
+        <div
+          class="_fieldGroup_ce4652"
+        >
+          <label
+            for="min-price"
+          >
+            Min price
+          </label>
+          <input
+            data-testid="min-price-input"
+            id="min-price"
+            min="0"
+            step="0.01"
+            type="number"
+            value=""
+          />
+        </div>
+        <div
+          class="_fieldGroup_ce4652"
+        >
+          <label
+            for="max-price"
+          >
+            Max price
+          </label>
+          <input
+            data-testid="max-price-input"
+            id="max-price"
+            min="0"
+            step="0.01"
+            type="number"
+            value=""
+          />
+        </div>
+        <div
+          class="_actions_ce4652"
+        >
+          <button
+            class="_searchButton_ce4652"
+            data-testid="search-button"
+            type="submit"
+          >
+            Search
+          </button>
+          <button
+            class="_resetButton_ce4652"
+            data-testid="reset-button"
+            type="button"
+          >
+            Clear
+          </button>
+        </div>
+      </form>
+      <p
+        class="_resultsCount_ce4652"
+      >
+        Showing 
+        2
+         of 
+        2
+         products
+      </p>
+      <section
+        aria-label="Search results"
+        class="_resultsGrid_ce4652"
+        data-testid="results-list"
+      >
+        <article
+          class="_productCard_ce4652"
+          data-testid="result-item"
+        >
+          <div
+            class="_cardHeader_ce4652"
+          >
+            <h2>
+              Test Laptop
+            </h2>
+            <span
+              class="_inStockBadge_ce4652"
+            >
+              In stock
+            </span>
+          </div>
+          <p
+            class="_category_ce4652"
+          >
+            electronics
+          </p>
+          <p
+            class="_price_ce4652"
+          >
+            $
+            299.99
+          </p>
+          <p
+            class="_description_ce4652"
+          >
+            A test laptop
+          </p>
+        </article>
+        <article
+          class="_productCard_ce4652"
+          data-testid="result-item"
+        >
+          <div
+            class="_cardHeader_ce4652"
+          >
+            <h2>
+              Test Book
+            </h2>
+            <span
+              class="_outOfStockBadge_ce4652"
+            >
+              Out of stock
+            </span>
+          </div>
+          <p
+            class="_category_ce4652"
+          >
+            books
+          </p>
+          <p
+            class="_price_ce4652"
+          >
+            $
+            14.99
+          </p>
+          <p
+            class="_description_ce4652"
+          >
+            A test book
+          </p>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ getElementError node_modules/@testing-library/dom/dist/query-helpers.js:20:35
+ ❯ getMultipleElementsFoundError node_modules/@testing-library/dom/dist/query-helpers.js:23:10
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:55:13
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/components/ProductSearch/ProductSearch.test.tsx:73:19
+     71|       expect(screen.getByText('Test Laptop')).toBeInTheDocume…
+     72|     })
+     73|     expect(screen.getByText('electronics')).toBeInTheDocument…
+       |                   ^
+     74|     expect(screen.getByText('$299.99')).toBeInTheDocument()
+     75|     expect(screen.getByText('In stock')).toBeInTheDocument()
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 8 passed (10)
+   Start at  18:32:49
+   Duration  1.27s (transform 71ms, setup 173ms, collect 134ms, tests 289ms, environment 327ms, prepare 49ms)
+
+as-mac-1285@AS-MAC-1285 frontend % 
